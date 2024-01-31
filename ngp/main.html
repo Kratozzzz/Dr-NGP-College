@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Background</title>
+    <style>
+
+        /* CSS for big words */
+        .big-words {
+            font-style:normal;
+            font-weight: bolder;
+            color: aliceblue;
+            font-size: 7em;
+            text-align:center;
+            margin-top: 75vh; /* Vertical centering */
+            transform: translateY(-50%);
+            opacity: 0; /* Initially hidden */
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        /* CSS for transition effect */
+        .show {
+            opacity: 1; /* Show when class is added */
+        }
+        /* CSS for video container */
+        #video-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+        /* CSS for video */
+        video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -1;
+        }
+        /* Other styles */
+        body {
+            margin: 0;
+            padding: 0;
+        }
+                /* CSS for menu */
+                nav {
+            background-color: #3300ff;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 40px; /* Adjust height as needed */
+            width: auto; /* Maintain aspect ratio */
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        li {
+            margin-left: 20px;
+        }
+
+        li a {
+            color: rgb(255, 250, 250);
+            text-decoration: none;
+        }
+
+        li a:hover {
+            text-decoration: underline;
+        }
+
+ 
+    </style>
+</head>
+<body>
+     <!-- Big Words -->
+     <div class="big-words">NGPASC</div>
+
+     <!-- Script to add transition class after delay -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            setTimeout(function() {
+                document.querySelector('.big-words').classList.add('show');
+            }, 1000); // Adjust delay (in milliseconds) as needed
+        });
+    </script>
+
+    <!-- Video container -->
+    <div id="video-container">
+        <video autoplay muted loop>
+            <source src="./video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <!-- Navigation Menu with Logo -->
+    <nav>
+        <div class="logo">
+            <img src="./logo.jpg" alt="Logo">
+        </div>
+        <ul>
+            <li><a href="#">Life@NGPASC</a></li>
+            <li><a href="./aboutus.html">About us</a></li>
+            <li><a href="./placement.html">Placements</a></li>
+            <li><a href="./programmes.html">Programmes</a></li>
+            <li><a href="./contactus.html">Contact us</a></li>
+        </ul>
+
+
+    </div>
+</body>

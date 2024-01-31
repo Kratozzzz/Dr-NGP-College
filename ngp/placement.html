@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tabbed Text Example with Background Image</title>
+<style>
+  /* Style for the tabs */
+  .tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+  }
+
+  /* Style for the tab buttons */
+  .tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+  }
+
+  /* Change background color of the active tab button */
+  .tab button.active {
+    background-color: #003cff;
+  }
+
+  /* Style for the tab content */
+  .tabcontent {
+    display: none;
+    color: #ffffff;
+    
+    font-style: initial;
+    font-weight: bolder;
+    padding: 6px 12px;
+    border: 1px solid #ffffff;
+    border-top: none;
+  }
+
+  /* Style for the body with background image */
+  body {
+    background-image: url('./assets/about.png'); /* Specify the path to your background image */
+    background-size: cover; /* Cover the entire background */
+    background-position: top; /* Position the background image in the center */
+    background-repeat: no-repeat; /* Do not repeat the background image */
+  }
+
+  .letters{
+    font-style: normal;
+  }
+</style>
+</head>
+<body>
+
+<div class="tab">
+  <button class="tablinks" onclick="openTab(event, 'Tab1')" id="defaultOpen">About The Department</button>
+  <button class="tablinks" onclick="openTab(event, 'Tab2')">Recuriters</button>
+  
+</div>
+
+<div id="Tab1" class="tabcontent">
+  <h2>About The Department</h2>
+<img width="500px" src="./pll.png" alt="plaement average">
+    <p >The Placement Cell plays a major role in paving the way for success in a student's career. With a consistent track record of achieving a maximum number of placed students, the department strives to ensure that no students are left out from achieving their dream job. Our training programs are focused towards a holistic development of building students expertise in Technical, Aptitude as well as Soft skills. Our unique skill based assessment evaluates students based on their performance and knowledge levels. The main objective of the Cell is to bridge the gap between the stringent competition in the industry and with the existing talent available in the college.
+
+    The Placement Cells motto is to make each and every student employable! </p>
+    <h2>Vision</h2>
+    <p>To enhance the employability of our students and impart the necessary skills and training to meet the expectation of the industry.</p>
+    <h2>Mission</h2>
+    <ul>
+        <li>To equip students with the necessary skills to face interviews confidently by giving them sufficient training in Aptitude, Communication, GD and Presentation in order to bring overall transformation.</li>
+        <li>To organize recruitment drives for our students with esteemed organizations from various fields within and outside the campus.</li>
+        <li>To strengthen career guidance by promoting guest lectures by experts of various fields and personnel from the corporate sector.</li>
+    </ul>
+    <h2>Placement Activities</h2>
+  <p>Activities facilitates an overall development of the students grooming by providing a range of inputs like</p>
+  <ul>
+    <li>Personality Development</li>
+    <li>Group Discussion</li>
+    <li>Aptitude Test</li>
+    <li>Mock Interviews and Mock Tests.</li>
+  </ul>
+  <p>The prime objective of the cell is to provide students with the latest training and certifications in line with the Corporate and Industries. The cell draws out competencies of the students and enables them to strive for better job opportunities.<br>Many programs have been organized this year to develop student’s skills such as:
+
+  </p>
+  <ul>
+    <li>Preparation Strategies for successful Interviews
+    </li>
+    <li>Motivation and Personality Development
+    </li>
+    <li>Overcoming Inhibition</li>
+    <li>Design your Destiny</li>
+    <li>Goal Setting</li>
+    <li>Team Work</li>
+    <li>Problem Solving Skills</li>
+    <li>Work Ethics</li>
+    <li>Adaptability skills</li>
+    <li>Time Management</li>
+    <li>Stress Management</li>
+  </ul>
+  <h2>Traning Young Mentors</h2>
+  <p>With a dedicated team, the cell constantly works and trains students towards achieving their goals and fulfilling their dreams. Training Young Mentors is a unique feature of Dr NGP Arts and Science College in facilitating group training sessions for its Placement representatives. These representatives are given special training in analysing tasks and designing training activities to further mentor their fellow mates.</p>
+</div>
+
+<div id="Tab2" class="tabcontent">
+  <h2>Recuriters</h2>
+  <p>About 75 companies recruited students for various positions. Apart from the below, the Placement Cell continuously organizes Career Oriented Programs by helping students to overcome hurdles in searching for jobs.
+
+    The following reputed companies which visited our college for recruitment for the academic year.</p>
+    <img src="./req.png"
+</div>
+
+
+</div>
+
+<script>
+  // Function to open a specific tab
+  function openTab(evt, tabName) {
+    var i, tabcontent, tablinks;
+
+    // Hide all tab content
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+
+    // Remove the "active" class from all tab buttons
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+
+    // Show the specific tab content
+    document.getElementById(tabName).style.display = "block";
+
+    // Add the "active" class to the button that opened the tab
+    evt.currentTarget.className += " active";
+  }
+
+  // Open the default tab on page load
+  document.getElementById("defaultOpen").click();
+</script>
+
+</body>
+</html>

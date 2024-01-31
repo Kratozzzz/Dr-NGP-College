@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tabbed Content</title>
+<style>
+     body {
+    background-image: url('./assets/place.png'); /* Specify the path to your background image */
+    background-size: cover; /* Cover the entire background */
+    background-position: top; /* Position the background image in the center */
+    background-repeat: no-repeat; /* Do not repeat the background image */
+  }
+    /* Style the tab buttons */
+    .tab {
+        overflow: hidden;
+        border: 1px solid #ccc;
+        background-color: #3c00ff;
+    }
+
+    /* Style the buttons inside the tab */
+    .tab button {
+        background-color: inherit;
+        float: left;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 14px 16px;
+        transition: 0.3s;
+    }
+
+    /* Change background color of buttons on hover */
+    .tab button:hover {
+        background-color: #ddd;
+    }
+
+    /* Create an active/current tablink class */
+    .tab button.active {
+        background-color: #ccc;
+    }
+
+    /* Style the tab content */
+    .tabcontent {
+        display: none;
+        color: white;
+        font-style: initial ;
+        font-weight: bolder;
+        display: none;
+        padding: 6px 12px;
+        border: 1px solid #ccc;
+        border-top: none;
+    }
+    .letters{
+    font-style: normal;
+  }
+</style>
+</head>
+<body>
+
+<div class="tab">
+    <button class="tablinks" onclick="openTab(event, 'Tab1')">UG Courses</button>
+    <button class="tablinks" onclick="openTab(event, 'Tab2')">PG Courses</button>
+    <button class="tablinks" onclick="openTab(event, 'Tab3')">Value Added</button>
+</div>
+
+<div id="Tab1" class="tabcontent">
+    <h2>UG Courses</h2>
+   <h3>Computer science</h3>
+   <ul>
+    <li>Bsc cs with Cyber Security</li>
+    <li>Bsc cs with Artificial Intelligence</li>
+    <li>Bsc computer science</li>
+    <li>Bsc Information Technology</li>
+    <li>Bsc Computer Technology</li>
+    <li>Bsc cs with Coginative System</li>
+    <li>Bsc cs with Data Analytics</li>
+   </ul>
+</div>
+
+<div id="Tab2" class="tabcontent">
+    <h2>PG courses</h2>
+    <h3>Computer Science</h3>
+    <ul>
+        <li>Msc Computer Science</li>
+        <li>Msc Computer Science with Data Analytics</li>
+    </ul>
+</div>
+
+<div id="Tab3" class="tabcontent">
+    <h2>Research</h2>
+    <h3>Computer Science</h3>
+    <ul>
+        <li>M.Phil Computer Science</li>
+    </ul>
+</div>
+
+<script>
+    function openTab(evt, tabName) {
+        // Get all elements with class="tabcontent" and hide them
+        var tabcontent = document.getElementsByClassName("tabcontent");
+        for (var i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+
+        // Get all elements with class="tablinks" and remove the class "active"
+        var tablinks = document.getElementsByClassName("tablinks");
+        for (var i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+
+        // Show the current tab, and add an "active" class to the button that opened the tab
+        document.getElementById(tabName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+</script>
+
+</body>
+</html>
